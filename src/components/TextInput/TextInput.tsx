@@ -21,17 +21,12 @@
  *   SOFTWARE.
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import "./../defaults.css";
+import styles from "./TextInput.module.css";
 
-import Component from "./components/TextInput/TextInput"
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <Component placeholder="Type here..."  onChange={(e) => {console.log(e.target.value)}} onClick={() => {console.log("click")}}/>
-  </React.StrictMode>
-);
+export default function TextButton(props: React.InputHTMLAttributes<HTMLInputElement>) {
+  return (
+    <input className={styles.component} tabIndex={0} {...props}></input>
+  );
+}

@@ -34,15 +34,17 @@
   outline: rgba(var(--chipletui-theme-color)) solid 0rem;
   color: rgb(var(--chipletui-text-color));
   font-size: 1rem;
+  backdrop-filter: blur(0.25rem);
+  user-select: none;
 }
 .component:hover {
-  background-color: rgb(var(--chipletui-background-color));
-  outline: rgba(var(--chipletui-theme-color) / .8) solid 0.3rem;
+  background-color: rgb(var(--chipletui-background-color) / 0.9);
+  outline: rgba(var(--chipletui-theme-color) / 0.6) solid 0.3rem;
 }
 .component:active {
-  background-color: rgb(var(--chipletui-background-color));
-  outline: rgba(var(--chipletui-theme-color) / 2) solid 0.4rem;
+  background-color: rgb(var(--chipletui-background-color) / 1.5);
+  outline: rgba(var(--chipletui-theme-color) / 2) solid 0.15rem;
 }
 .component:focus-visible {
-  outline: rgba(var(--chipletui-theme-color) / .8) solid 0.3rem;
+  outline: rgba(var(--chipletui-theme-color) / 0.8) solid 0.3rem;
 }

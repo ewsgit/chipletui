@@ -21,17 +21,15 @@
  *   SOFTWARE.
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-
-import Component from "./components/TextInput/TextInput"
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <Component placeholder="Type here..."  onChange={(e) => {console.log(e.target.value)}} onClick={() => {console.log("click")}}/>
-  </React.StrictMode>
-);
+.component {
+  backdrop-filter: blur(0.25rem);
+  cursor: text;
+  transition: all 0.08s linear;
+  border: none;
+  outline: rgba(var(--chipletui-theme-color)) solid 0rem;
+  color: rgb(var(--chipletui-text-color));
+  font-size: 1rem;
+  background-color: rgb(var(--chipletui-background-color));
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+}

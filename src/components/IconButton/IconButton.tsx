@@ -21,17 +21,17 @@
  *   SOFTWARE.
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import "./../defaults.css";
+import { IconTypings } from "../../iconTypings";
+import styles from "./IconButton.module.css";
 
-import Component from "./components/TextInput/TextInput"
+type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & { icon: IconTypings };
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <Component placeholder="Type here..."  onChange={(e) => {console.log(e.target.value)}} onClick={() => {console.log("click")}}/>
-  </React.StrictMode>
-);
+export default function IconButton(props: IconButtonProps) {
+  return (
+    <button className={styles.component} onClick={props.onClick}>
+      <span className={`material-symbols-rounded`}>{props.icon}</span>
+    </button>
+  );
+}

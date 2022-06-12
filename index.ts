@@ -21,17 +21,8 @@
  *   SOFTWARE.
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import TextButton from "./src/components/TextButton/TextButton";
+import IconButton from "./src/components/IconButton/IconButton";
+import TextInput from "./src/components/TextInput/TextInput"
 
-import Component from "./components/TextInput/TextInput"
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <Component placeholder="Type here..."  onChange={(e) => {console.log(e.target.value)}} onClick={() => {console.log("click")}}/>
-  </React.StrictMode>
-);
+export { TextButton, IconButton, TextInput };

@@ -25,9 +25,11 @@ import React from "react"
 import "./../defaults.css"
 import styles from "./TextButton.module.css"
 
-export default function TextButton(props: {text: string, onClick: () => void}) {
+type TextButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & { text: string }
+
+export default function TextButton(props: TextButtonProps) {
   return (
-    <button className={styles.component} onClick={props.onClick}>
+    <button className={styles.component} tabIndex={0} {...props}>
       {props.text}
     </button>
   )
