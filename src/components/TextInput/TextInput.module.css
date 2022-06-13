@@ -25,11 +25,12 @@
   backdrop-filter: blur(0.25rem);
   cursor: text;
   transition: all 0.08s linear;
-  border: none;
   outline: rgba(var(--chipletui-theme-color)) solid 0rem;
   color: rgb(var(--chipletui-text-color));
   font-size: 1rem;
   background-color: rgb(var(--chipletui-background-color));
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
+  border: none;
+  border-bottom: 0.25rem solid rgb(var(--chipletui-theme-color));
 }
