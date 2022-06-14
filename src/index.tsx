@@ -34,8 +34,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <TextButton text='Test'/>
-    <TextInput placeholder="Type here..."  onChange={(e) => {console.log(e.currentTarget.value)}} minLength={8} />
-    <IconButton icon="add_home" />
+    <TextButton text="Test" />
+    <TextButton text="New test button" />
+    <TextInput placeholder="Type here..." minLength={10} maxLength={20} />
+    <IconButton icon="cast_connected" />
   </React.StrictMode>
 );

@@ -37,7 +37,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(255, 0, 198);
-  background: linear-gradient(45deg, rgba(255, 0, 198, 1) 0%, rgba(255, 222, 0, 1) 100%);
+  background: #222;
+  /* background: linear-gradient(45deg, rgba(255, 0, 198, 1) 0%, rgba(255, 222, 0, 1) 100%); */
   overflow: hidden;
 }

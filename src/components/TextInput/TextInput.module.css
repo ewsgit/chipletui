@@ -36,11 +36,9 @@
 
 .component > input {
   border: none;
-  border-bottom: 0.25rem solid rgb(var(--chipletui-theme-color));
   color: rgb(var(--chipletui-text-color));
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  padding: 0.25rem 0.5rem;
   background-color: rgb(var(--chipletui-background-color));
   outline: rgba(var(--chipletui-theme-color)) solid 0rem;
 }
@@ -58,11 +56,20 @@
   outline: rgba(var(--chipletui-theme-color) / 0.8) solid 0.3rem;
 }
 
-.minLengthIndicator {
+.lengthIndicator {
   background-color: #00000088;
   position: absolute;
   bottom: 0;
   height: 0.25rem;
   width: 0.25rem;
-  z-index: 1000;
+  transition: all 0.1s;
+}
+
+.minLengthIndicator {
+  background-color: #000000aa;
+  height: 0.25rem;
+  width: 0.125rem;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
 }

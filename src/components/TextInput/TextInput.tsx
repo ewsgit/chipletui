@@ -21,38 +21,59 @@
  *   SOFTWARE.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import "./../defaults.css";
 import styles from "./TextInput.module.css";
 
 type TextButtonProps = React.ButtonHTMLAttributes<HTMLInputElement> & {
   maxLength?: number;
   minLength?: number;
-  onChange?: never;
+  onChange?: undefined;
   onchange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function TextButton(props: TextButtonProps) {
+  useEffect(() => {
+    if (!props.minLength) return
+    if (!props.maxLength) return;
+    if (props.minLength > props.maxLength) {
+      throw new Error("minLength must be less than maxLength");
+    }
+  }, [props])
   const [length, setLength] = React.useState(0);
+  const [percentageFull, setPercentageFull] = React.useState(0);
+  const [message, setMessage] = React.useState("");
   return (
     <div className={styles.component}>
       <input
-        style={{
-          borderBottomColor: props.minLength ? (length > props.minLength ? "#00ff00" : "#ff0000") : "",
-        }}
         type="text"
-        onChange={e => {
-          setLength(e.target.value.length + 1);
+        style={props.maxLength || props.minLength ? {
+          borderBottom: message !== "" ? "0.5rem solid #0004" : "0.25rem solid #0004",
+        } : {}}
+        onChange={(e: any) => {
+          setLength(e.target.value.length);
+          if (props.maxLength && e.target.value.length > props.maxLength) {
+            setMessage("The current content is too long");
+          }
+          if (props.maxLength) setPercentageFull((e.target.value.length / props.maxLength) * 100);
           console.log(length);
-          if (props.onchange) props.onchange(e)
+          if (props.onchange) props.onchange(e);
         }}
         {...props}
       />
       <div
-        className={styles.minLengthIndicator}
+        className={styles.lengthIndicator}
         style={{
-          left: length + "%",
+          width: `${percentageFull}%`,
+          backgroundColor: props.minLength ? (length >= props.minLength ? "#00ff00" : "#ff0000") : "",
         }}></div>
+      {props.minLength && props.maxLength ? (
+        <div
+          className={styles.minLengthIndicator}
+          style={{
+            left: (props.minLength / props.maxLength) * 100 + "%",
+          }}></div>
+      ) : null}
     </div>
   );
 }
