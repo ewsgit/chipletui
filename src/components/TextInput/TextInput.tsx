@@ -25,8 +25,34 @@ import React from "react";
 import "./../defaults.css";
 import styles from "./TextInput.module.css";
 
-export default function TextButton(props: React.InputHTMLAttributes<HTMLInputElement>) {
+type TextButtonProps = React.ButtonHTMLAttributes<HTMLInputElement> & {
+  maxLength?: number;
+  minLength?: number;
+  onChange?: never;
+  onchange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export default function TextButton(props: TextButtonProps) {
+  const [length, setLength] = React.useState(0);
   return (
-    <input className={styles.component} tabIndex={0} {...props}></input>
+    <div className={styles.component}>
+      <input
+        style={{
+          borderBottomColor: props.minLength ? (length > props.minLength ? "#00ff00" : "#ff0000") : "",
+        }}
+        type="text"
+        onChange={e => {
+          setLength(e.target.value.length + 1);
+          console.log(length);
+          if (props.onchange) props.onchange(e)
+        }}
+        {...props}
+      />
+      <div
+        className={styles.minLengthIndicator}
+        style={{
+          left: length + "%",
+        }}></div>
+    </div>
   );
 }

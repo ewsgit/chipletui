@@ -25,13 +25,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-import Component from "./components/TextInput/TextInput"
+import TextInput from "./components/TextInput/TextInput"
+import TextButton from './components/TextButton/TextButton';
+import IconButton from './components/IconButton/IconButton';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Component placeholder="Type here..."  onChange={(e) => {console.log(e.target.value)}} onClick={() => {console.log("click")}}/>
+    <TextButton text='Test'/>
+    <TextInput placeholder="Type here..."  onChange={(e) => {console.log(e.currentTarget.value)}} minLength={8} />
+    <IconButton icon="add_home" />
   </React.StrictMode>
 );

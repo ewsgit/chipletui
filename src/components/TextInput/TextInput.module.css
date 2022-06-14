@@ -26,11 +26,43 @@
   cursor: text;
   transition: all 0.08s linear;
   outline: rgba(var(--chipletui-theme-color)) solid 0rem;
-  color: rgb(var(--chipletui-text-color));
-  font-size: 1rem;
   background-color: rgb(var(--chipletui-background-color));
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.component > input {
   border: none;
   border-bottom: 0.25rem solid rgb(var(--chipletui-theme-color));
+  color: rgb(var(--chipletui-text-color));
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(var(--chipletui-background-color));
+  outline: rgba(var(--chipletui-theme-color)) solid 0rem;
+}
+
+
+.component:hover {
+  background-color: rgb(var(--chipletui-background-color) / 0.9);
+  outline: rgba(var(--chipletui-theme-color) / 0.6) solid 0.3rem;
+}
+.component:focus-within {
+  background-color: rgb(var(--chipletui-background-color) / 1.5);
+  outline: rgba(var(--chipletui-theme-color) / 2) solid 0.15rem;
+}
+.component:focus-visible {
+  outline: rgba(var(--chipletui-theme-color) / 0.8) solid 0.3rem;
+}
+
+.minLengthIndicator {
+  background-color: #00000088;
+  position: absolute;
+  bottom: 0;
+  height: 0.25rem;
+  width: 0.25rem;
+  z-index: 1000;
 }
