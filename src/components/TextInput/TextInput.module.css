@@ -41,8 +41,8 @@
   padding: 0.25rem 0.5rem;
   background-color: rgb(var(--chipletui-background-color));
   outline: rgba(var(--chipletui-theme-color)) solid 0rem;
+  transition: all 0.08s linear;
 }
-
 
 .component:hover {
   background-color: rgb(var(--chipletui-background-color) / 0.9);
@@ -63,6 +63,7 @@
   height: 0.25rem;
   width: 0.25rem;
   transition: all 0.1s;
+  transition: all 0.08s linear;
 }
 
 .minLengthIndicator {
@@ -72,4 +73,20 @@
   transform: translateX(-50%);
   position: absolute;
   bottom: 0;
+  transition: all 0.08s linear;
+}
+
+.message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  font-size: 0.85rem;
+  font-weight: 900;
+  font-family: inherit;
+  color: rgb(var(--chipletui-text-color));
+  transition: all 0.08s linear;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
 }

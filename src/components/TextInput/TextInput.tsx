@@ -34,43 +34,57 @@ type TextButtonProps = React.ButtonHTMLAttributes<HTMLInputElement> & {
 
 export default function TextButton(props: TextButtonProps) {
   useEffect(() => {
-    if (!props.minLength) return
+    if (!props.minLength) return;
     if (!props.maxLength) return;
     if (props.minLength > props.maxLength) {
       throw new Error("minLength must be less than maxLength");
     }
-  }, [props])
+  }, [props]);
   const [length, setLength] = React.useState(0);
   const [percentageFull, setPercentageFull] = React.useState(0);
   const [message, setMessage] = React.useState("");
   return (
     <div className={styles.component}>
       <input
+        onBlur={() => {
+          setMessage("");
+        }}
         type="text"
-        style={props.maxLength || props.minLength ? {
-          borderBottom: message !== "" ? "0.5rem solid #0004" : "0.25rem solid #0004",
-        } : {}}
+        style={
+          props.maxLength || props.minLength
+            ? {
+                borderBottom: message !== "" ? "1rem solid #0004" : "0.25rem solid #0004",
+              }
+            : {}
+        }
         onChange={(e: any) => {
-          setLength(e.target.value.length);
-          if (props.maxLength && e.target.value.length > props.maxLength) {
-            setMessage("The current content is too long");
+          setMessage("");
+          if (props.maxLength && e.target.value.length === props.maxLength) {
+            setMessage("Max length reached");
           }
+          if (props.minLength && e.target.value.length < props.minLength) {
+            setMessage("Enter at least " + props.minLength + " characters");
+          }
+          setLength(e.target.value.length);
           if (props.maxLength) setPercentageFull((e.target.value.length / props.maxLength) * 100);
           console.log(length);
           if (props.onchange) props.onchange(e);
         }}
         {...props}
       />
+      {message !== "" ? <div className={styles.message}>{message}</div> : null}
       <div
         className={styles.lengthIndicator}
         style={{
+          height: message !== "" ? "1rem" : "0.25rem",
           width: `${percentageFull}%`,
-          backgroundColor: props.minLength ? (length >= props.minLength ? "#00ff00" : "#ff0000") : "",
+          backgroundColor: props.minLength ? (length >= props.minLength ? "#009900" : "#bb0000") : "",
         }}></div>
       {props.minLength && props.maxLength ? (
         <div
           className={styles.minLengthIndicator}
           style={{
+            height: message !== "" ? "1rem" : "0.25rem",
             left: (props.minLength / props.maxLength) * 100 + "%",
           }}></div>
       ) : null}

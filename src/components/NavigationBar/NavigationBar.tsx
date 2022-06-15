@@ -21,24 +21,10 @@
  *   SOFTWARE.
  */
 
-#root > * {
-  margin-bottom: 0.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
+import React from "react";
+import "./../defaults.css";
+import styles from "./NavigationBar.module.css";
 
-#root > *:last-child {
-  margin-bottom: 0;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #222;
-  /* background: linear-gradient(45deg, rgba(255, 0, 198, 1) 0%, rgba(255, 222, 0, 1) 100%); */
-  overflow: hidden;
+export default function NavigationBar(props: {children: React.ReactNode | React.ReactNode[]}) {
+  return <div className={styles.component}></div>
 }
