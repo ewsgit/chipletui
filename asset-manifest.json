@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.2e690624.css",
-    "main.js": "/static/js/main.d9242def.js",
-    "index.html": "/index.html",
-    "main.2e690624.css.map": "/static/css/main.2e690624.css.map",
-    "main.d9242def.js.map": "/static/js/main.d9242def.js.map"
+    "main.css": "/chipletui/static/css/main.2e690624.css",
+    "main.js": "/chipletui/static/js/main.d9242def.js",
+    "index.html": "/chipletui/index.html",
+    "main.2e690624.css.map": "/chipletui/static/css/main.2e690624.css.map",
+    "main.d9242def.js.map": "/chipletui/static/js/main.d9242def.js.map"
   },
   "entrypoints": [
     "static/css/main.2e690624.css",
