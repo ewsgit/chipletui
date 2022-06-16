@@ -30,6 +30,12 @@
   --chipletui-theme-color: 89 169 106; /* use the format of rgb 255 255 255 */;
 }
 
+.dark {
+  --chipletui-background-color: rgb(80 80 80); /* use the format of rgb 255 255 255 */
+  --chipletui-text-color: 255 255 255; /* use the format of rgb 255 255 255 */;
+  --chipletui-theme-color: 89 169 106; /* use the format of rgb 255 255 255 */;
+}
+
 * {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }

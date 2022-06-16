@@ -21,3 +21,11 @@
  *   SOFTWARE.
  */
 
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
