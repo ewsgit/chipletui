@@ -21,29 +21,10 @@
  *   SOFTWARE.
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import "./../defaults.css";
+import styles from "./NavBar.module.css";
 
-import TextInput from "./components/TextInput/TextInput"
-import TextButton from './components/TextButton/TextButton';
-import IconButton from './components/IconButton/IconButton';
-import * as NavigationBar from "./components/NavigationBar/NavigationBar"
-
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
-root.render(
-    <React.StrictMode>
-        <NavigationBar.NavBar content={
-            <NavigationBar.Foldout>
-                <NavigationBar.Button name="Test Navigation Button" icon="done" />
-            </NavigationBar.Foldout>
-        }>
-            <TextButton text="Test" />
-            <TextButton text="New test button" />
-            <TextInput placeholder="Type here..." minLength={10} maxLength={20} />
-            <IconButton icon="cast_connected" />
-        </NavigationBar.NavBar>
-    </React.StrictMode>
-);
+export default function NavigationBar(props: {children: React.ReactNode | React.ReactNode[]}) {
+    return <div className={styles.component}></div>
+}
