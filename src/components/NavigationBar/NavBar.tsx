@@ -25,6 +25,14 @@ import React from "react";
 import "./../defaults.css";
 import styles from "./NavBar.module.css";
 
-export default function NavigationBar(props: {children: React.ReactNode | React.ReactNode[]}) {
-    return <div className={styles.component}></div>
+export default function NavBar(props: {
+  children: React.ReactNode | React.ReactNode[];
+  content: React.ReactNode | React.ReactNode[];
+}) {
+  return (
+    <div className={styles.component}>
+      <div className={styles.navbar}>{props.content}</div>
+      <div className={styles.content}>{props.children}</div>
+    </div>
+  );
 }
