@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/chipletui/static/css/main.2e690624.css",
-    "main.js": "/chipletui/static/js/main.d9242def.js",
+    "main.css": "/chipletui/static/css/main.3a2a7798.css",
+    "main.js": "/chipletui/static/js/main.27e44893.js",
     "index.html": "/chipletui/index.html",
-    "main.2e690624.css.map": "/chipletui/static/css/main.2e690624.css.map",
-    "main.d9242def.js.map": "/chipletui/static/js/main.d9242def.js.map"
+    "main.3a2a7798.css.map": "/chipletui/static/css/main.3a2a7798.css.map",
+    "main.27e44893.js.map": "/chipletui/static/js/main.27e44893.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e690624.css",
-    "static/js/main.d9242def.js"
+    "static/css/main.3a2a7798.css",
+    "static/js/main.27e44893.js"
   ]
 }
