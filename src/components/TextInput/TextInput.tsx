@@ -22,8 +22,7 @@
  */
 
 import React, { useEffect } from "react";
-import "./../defaults.css";
-import styles from "./TextInput.module.css";
+import styles from "./TextInput.module.scss";
 
 type TextButtonProps = React.ButtonHTMLAttributes<HTMLInputElement> & {
   maxLength?: number;
@@ -67,7 +66,6 @@ export default function TextButton(props: TextButtonProps) {
           }
           setLength(e.target.value.length);
           if (props.maxLength) setPercentageFull((e.target.value.length / props.maxLength) * 100);
-          console.log(length);
           if (props.onchange) props.onchange(e);
         }}
         {...props}

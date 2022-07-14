@@ -21,12 +21,39 @@
  *   SOFTWARE.
  */
 
-import NavBar from "./NavBar"
-import Button from "./Button"
-import Foldout from "./Foldout"
+@use "./../defaults.scss";
 
-export {
-    NavBar,
-    Button,
-    Foldout
+.component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  aspect-ratio: 1;
+  background-color: rgb(var(--chipletui-background-color));
+  border-radius: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.08s linear;
+  backdrop-filter: blur(0.25rem);
+  border: none;
+  outline: rgba(var(--chipletui-theme-color)) solid 0rem;
+
+  > span {
+    font-size: 2rem;
+    color: rgb(var(--chipletui-text-color));
+  }
+
+  &:hover {
+    background-color: rgb(var(--chipletui-background-color));
+    outline: rgba(var(--chipletui-theme-color) / 0.6) solid 0.3rem;
+  }
+
+  &:focus-visible {
+    outline: rgba(var(--chipletui-theme-color) / 0.8) solid 0.3rem;
+  }
+
+  &:active {
+    background-color: rgb(var(--chipletui-background-color));
+    outline: rgba(var(--chipletui-theme-color)) solid 0.15rem;
+  }
 }

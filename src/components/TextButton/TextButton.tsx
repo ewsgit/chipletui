@@ -22,8 +22,7 @@
  */
 
 import React from "react"
-import "./../defaults.css"
-import styles from "./TextButton.module.css"
+import styles from "./TextButton.module.scss"
 
 type TextButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & { text: string }
 

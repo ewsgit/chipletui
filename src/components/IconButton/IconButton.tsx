@@ -22,9 +22,8 @@
  */
 
 import React from "react";
-import "./../defaults.css";
 import { IconTypings } from "../../iconTypings";
-import styles from "./IconButton.module.css";
+import styles from "./IconButton.module.scss";
 
 type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & { icon: IconTypings };
 

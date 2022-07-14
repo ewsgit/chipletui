@@ -21,39 +21,48 @@
  *   SOFTWARE.
  */
 
+@use "./../defaults.scss";
+
 .component {
   backdrop-filter: blur(0.25rem);
   cursor: text;
   transition: all 0.08s linear;
-  outline: rgba(var(--chipletui-theme-color)) solid 0rem;
-  background-color: rgb(var(--chipletui-background-color));
+  outline: defaults.$theme-color solid 0rem;
+  background-color: defaults.$background-color;
   border-radius: 0.5rem;
   border: none;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-}
 
-.component > input {
-  border: none;
-  color: rgb(var(--chipletui-text-color));
-  font-size: 1.5rem;
-  padding: 0.25rem 0.5rem;
-  background-color: rgb(var(--chipletui-background-color));
-  outline: rgba(var(--chipletui-theme-color)) solid 0rem;
-  transition: all 0.08s linear;
-}
+  > input {
+    border: none;
+    color: defaults.$text-color;
+    font-size: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: defaults.$background-color;
+    outline: defaults.$theme-color solid 0rem;
+    transition: all 0.08s linear;
+    width: 100%;
+  }
 
-.component:hover {
-  background-color: rgb(var(--chipletui-background-color) / 0.9);
-  outline: rgba(var(--chipletui-theme-color) / 0.6) solid 0.3rem;
-}
-.component:focus-within {
-  background-color: rgb(var(--chipletui-background-color) / 1.5);
-  outline: rgba(var(--chipletui-theme-color) / 2) solid 0.15rem;
-}
-.component:focus-visible {
-  outline: rgba(var(--chipletui-theme-color) / 0.8) solid 0.3rem;
+  > input::placeholder {
+    color: rgb(var(--chipletui-text-color) / 75%);
+  }
+
+  &:hover {
+    background-color: rgb(defaults.$var-background-color / 0.9);
+    outline: rgba(defaults.$var-theme-color / 0.6) solid 0.3rem;
+  }
+
+  &:focus-within {
+    background-color: rgb(defaults.$var-background-color / 1.5);
+    outline: rgba(defaults.$var-theme-color / 2) solid 0.15rem;
+  }
+
+  &:focus-visible {
+    outline: rgba(defaults.$var-theme-color / 0.8) solid 0.3rem;
+  }
 }
 
 .lengthIndicator {
@@ -84,7 +93,7 @@
   font-size: 0.85rem;
   font-weight: 900;
   font-family: inherit;
-  color: rgb(var(--chipletui-text-color));
+  color: defaults.$text-color;
   transition: all 0.08s linear;
   width: 100%;
   text-align: center;
