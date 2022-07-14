@@ -29,7 +29,7 @@
   transition: all 0.08s linear;
   outline: defaults.$theme-color solid 0rem;
   background-color: defaults.$background-color;
-  border-radius: 0.5rem;
+  border-radius: defaults.$radius;
   border: none;
   box-sizing: border-box;
   overflow: hidden;
@@ -47,7 +47,7 @@
   }
 
   > input::placeholder {
-    color: rgb(var(--chipletui-text-color) / 75%);
+    color: rgb(defaults.$var-text-color / 75%);
   }
 
   &:hover {

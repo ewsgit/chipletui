@@ -1,9 +1,14 @@
-@use "./basic-theme-styles.scss";
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded");
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 body {
   --chipletui-background-color: 200 200 200; /* use the format of rgb() */
   --chipletui-text-color: 80 80 80; /* use the format of rgb() */
   --chipletui-theme-color: 109 189 126; /* use the format of rgb() */
+  --chipletui-radius: 0rem; /* use a size value e.g: 0.25rem */
 }
 
 .dark {

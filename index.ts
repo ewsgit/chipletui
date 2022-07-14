@@ -24,5 +24,6 @@
 import TextButton from "./src/components/TextButton/TextButton";
 import IconButton from "./src/components/IconButton/IconButton";
 import TextInput from "./src/components/TextInput/TextInput"
+import VerticalSlider from "./src/components/VerticalSlider/VerticalSlider";
 
-export { TextButton, IconButton, TextInput };
+export { TextButton, IconButton, TextInput, VerticalSlider };

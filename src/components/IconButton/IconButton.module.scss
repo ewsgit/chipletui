@@ -29,27 +29,27 @@
   justify-content: center;
   height: 3rem;
   aspect-ratio: 1;
-  background-color: rgb(var(--chipletui-background-color));
-  border-radius: 0.5rem;
+  background-color: defaults.$background-color;
+  border-radius: defaults.$radius;
   user-select: none;
   cursor: pointer;
   transition: all 0.08s linear;
   backdrop-filter: blur(0.25rem);
   border: none;
-  outline: rgba(var(--chipletui-theme-color)) solid 0rem;
+  outline: defaults.$theme-color solid 0rem;
 
   > span {
     font-size: 2rem;
-    color: rgb(var(--chipletui-text-color));
+    color: defaults.$text-color;
   }
 
   &:hover {
-    background-color: rgb(var(--chipletui-background-color));
-    outline: rgba(var(--chipletui-theme-color) / 0.6) solid 0.3rem;
+    background-color: defaults.$background-color;
+    outline: rgba(defaults.$var-theme-color / 0.6) solid 0.3rem;
   }
 
   &:focus-visible {
-    outline: rgba(var(--chipletui-theme-color) / 0.8) solid 0.3rem;
+    outline: rgba(defaults.$var-theme-color / 0.8) solid 0.3rem;
   }
 
   &:active {

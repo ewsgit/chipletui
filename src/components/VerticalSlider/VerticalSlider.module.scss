@@ -1,0 +1,7 @@
+@use "./../defaults";
+
+.component {
+  &::-webkit-slider-thumb {
+    background-color: red;
+  }
+}

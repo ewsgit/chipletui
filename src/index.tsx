@@ -25,10 +25,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-import "./components/themes/default.scss"
+import "./components/setup.scss"
 import TextInput from "./components/TextInput/TextInput"
 import TextButton from './components/TextButton/TextButton';
 import IconButton from './components/IconButton/IconButton';
+import VerticalSlider from "./components/VerticalSlider/VerticalSlider";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(<div className={"dark"}>
@@ -36,4 +37,5 @@ root.render(<div className={"dark"}>
     <TextButton text="New test button"/>
     <TextInput placeholder="Type here..." minLength={10} maxLength={20}/>
     <IconButton icon="cast_connected"/>
+    <VerticalSlider />
 </div>);
